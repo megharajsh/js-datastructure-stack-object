@@ -23,6 +23,9 @@ Stack.prototype.pop = function(val) {
   return value;
 }
 
+Stack.prototype.peek = function() {
+  return this.storage[this.count-1];
+}
 
 Stack.prototype.size = function() {
   return this.count;
@@ -40,9 +43,13 @@ appDiv.innerHTML+= `Stack: ${Object.values(myStack.storage)}, Size: ${myStack.si
 appDiv.innerHTML+= `Pop: ${myStack.pop()}, Size: ${myStack.size()}<br>`;
 appDiv.innerHTML+= `Pop: ${myStack.pop()}, Size: ${myStack.size()}<br><br>`;
 
+appDiv.innerHTML+= `Peek: ${myStack.peek()}<br><br>`;
+
 myStack.push('UAE');
 appDiv.innerHTML+= `Push: UAE, Size: ${myStack.size()}<br>`;
 myStack.push('Brazil')
 appDiv.innerHTML+= `Push: Brazil, Size: ${myStack.size()}<br><br>`;
 
-appDiv.innerHTML+= `Pop: ${myStack.pop()}, Size: ${myStack.size()}<br>`;
+appDiv.innerHTML+= `Pop: ${myStack.pop()}, Size: ${myStack.size()}<br><br>`;
+
+appDiv.innerHTML+= `Peek: ${myStack.peek()}<br><br>`;
