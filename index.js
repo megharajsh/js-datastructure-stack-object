@@ -11,16 +11,16 @@ function Stack() {
 }
 
 Stack.prototype.push = function(val) {
-  this.storage[this.count] = val;
-  this.count++;
+  this.storage[this.count++] = val;
 }
 
-
 Stack.prototype.pop = function(val) {
-  const removeItem = this.count !== 0 ? this.storage[this.count-1] : 'Stack is Empty';
-  delete this.storage[this.count-1];
-  this.count--;
-  return removeItem;
+  let value = this.storage[--this.count];
+  delete this.storage[this.count];
+  if (this.count < 0) {
+    this.count = 0;
+  }
+  return value;
 }
 
 
